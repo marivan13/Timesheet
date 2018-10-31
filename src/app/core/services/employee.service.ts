@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import Employee from '../employee/employee.model';
+import Employee from '@app/core/models/employee.model';
+import {environment} from '@env/environment';
 
-
-@Injectable( )
+@Injectable(
+  {providedIn: 'root'
+})
 export default class EmployeeService {
 
-  public API = 'http://aac-vm.universe.dart.spb:8080/api';
-  public EMPLOYEES_API = `${this.API}/employees`;
-  public HEADER = new HttpHeaders().append('API_KEY', 'PzdpccFUoHbV%2fWozyO7vx0Qv%2faK7OcFWjl%2br9tbhIhQ%3d');
+ // public API = 'http://aac-vm.universe.dart.spb:8080/api';
+  public EMPLOYEES_API = `${environment.api}/employees`;
+  public HEADER = new HttpHeaders().append('API_KEY', environment.api_key);
 
   constructor(private http:HttpClient) { }
 
