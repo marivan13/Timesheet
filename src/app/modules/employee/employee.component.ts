@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource} from '@angular/material';
 import  EmployeeService  from '@app/core/services/employee.service';
 import  Employee  from '@app/core/models/employee.model';
 
@@ -11,6 +12,8 @@ import  Employee  from '@app/core/models/employee.model';
 })
 export class EmployeeComponent implements OnInit {
   employees: Array<Employee>;
+  displayedColumns: string[] = ['first', 'last', 'email', 'phone'];
+  dataSource:MatTableDataSource<Employee>;
 
   constructor(private employeeService:EmployeeService) { }
 
@@ -19,6 +22,10 @@ export class EmployeeComponent implements OnInit {
       console.log(data);
       this.employees = data;
     });
+    this.dataSource = new MatTableDataSource(this.employees);
   }
 
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }

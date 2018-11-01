@@ -13,9 +13,9 @@ import {
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
+import {TimesheetModule} from '@app/modules/timesheet/timesheet.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from '@app/shared/header/header.component';
-import { EmployeeComponent } from '@app/modules/employee/components/employee.component';
 
 
 import { SharedModule } from '@app/shared/shared.module';
@@ -23,7 +23,6 @@ import { SharedModule } from '@app/shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent,
     HeaderComponent
   ],
   imports: [
@@ -31,6 +30,7 @@ import { SharedModule } from '@app/shared/shared.module';
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
+    TimesheetModule,
     MatButtonModule,
     MatIconModule,
     MatInputModule,

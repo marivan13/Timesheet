@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { EmployeeComponent } from '@app/modules/employee/components/employee.component';
-
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 const routes: Routes = [
   {
     path:'employee',
-    component: EmployeeComponent
+    loadChildren: './modules/employee/employee.module#EmployeeModule'
   }
+
 ];
 
 @NgModule({
+ // imports: [RouterModule.forRoot(routes, {preloadingStrategy:PreloadAllModules})],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
