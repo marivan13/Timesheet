@@ -3,4 +3,5 @@ export default class Employee{
     first: string;
     last: string;
     email:string;
+    phone:string;
 }

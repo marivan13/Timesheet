@@ -10,6 +10,7 @@ export class ProjectListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("ProjectInit");
   }
 
 }

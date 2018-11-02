@@ -1,7 +1,5 @@
-<p>
-    employee works!
-  </p>
-<!-- <table>
+
+ <!--<table>
   <thead>
   </thead>
   <tbody>
@@ -11,25 +9,27 @@
         <td>{{employee.Last}}</td>
         <td>{{employee.Email}}</td>
         <td>{{employee.Phone}}</td>
-        <td>{{employee.Location.Name}}</td>
+       
       </tr>
   </tbody>
   </table> -->
- 
-  <mat-form-field>
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-    </mat-form-field>
-    
-    <table mat-table [dataSource]="" class="mat-elevation-z8">
-    
-      <ng-container matColumnDef="first">
-        <th mat-header-cell *matHeaderCellDef> First </th>
-        <td mat-cell *matCellDef="let employee"> {{employee.First}} </td>
-      </ng-container>
-    
-      <ng-container matColumnDef="last">
-        <th mat-header-cell *matHeaderCellDef> Last </th>
-        <td mat-cell *matCellDef="let employee"> {{employee.Last}} </td>
+   <div fxFill fxLayout="column" fxLayoutAlign="space-evenly">
+    <div fxLayout="row" fxLayoutAlign="">
+      <div [fxFlex]="70">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        </mat-form-field> 
+      </div>
+      <div [fxFlex]="30">
+          <a mat-raised-button routerLink= '/'> Add employee </a>
+      </div>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let employee"> {{employee.First}} {{employee.Last}}</td>
       </ng-container>
     
       <ng-container matColumnDef="email">
@@ -41,8 +41,28 @@
         <th mat-header-cell *matHeaderCellDef> Phone </th>
         <td mat-cell *matCellDef="let employee"> {{employee.Phone}} </td>
       </ng-container>
+
+      <ng-container matColumnDef="skype">
+          <th mat-header-cell *matHeaderCellDef> Skype </th>
+          <td mat-cell *matCellDef="let employee"> {{employee.Skype}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let employee">
+              <a mat-button routerLink= '/'>edit</a>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let employee">
+              <a mat-button routerLink= '/'>delete</a>
+            </td>
+        </ng-container>
     
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table> 
-  
+  </div>
+  </div>

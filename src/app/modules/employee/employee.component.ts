@@ -12,20 +12,36 @@ import  Employee  from '@app/core/models/employee.model';
 })
 export class EmployeeComponent implements OnInit {
   employees: Array<Employee>;
-  displayedColumns: string[] = ['first', 'last', 'email', 'phone'];
+  displayedColumns = ['name', 'email', 'phone', 'skype', 'edit', 'delete'];
   dataSource:MatTableDataSource<Employee>;
 
-  constructor(private employeeService:EmployeeService) { }
+  constructor(private employeeService:EmployeeService) {
+    // this.employeeService.getAllEmployees().subscribe(data => {
+    //   console.log(data);
+    //   this.employees = data;
+    //   console.log(data);
+    //   this.dataSource = new MatTableDataSource(this.employees);
+    //   console.log(this.dataSource);
+    // });
+
+  }
 
   ngOnInit() {
     this.employeeService.getAllEmployees().subscribe(data => {
       console.log(data);
       this.employees = data;
+      this.dataSource = new MatTableDataSource(this.employees);
+      console.log(this.dataSource);
     });
-    this.dataSource = new MatTableDataSource(this.employees);
+
+   
   }
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  addEmployee(){
+    console.log('addEmployee');
   }
 }
