@@ -7,9 +7,13 @@ import {
   MatListModule,
   MatMenuModule,
   MatSidenavModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatFormFieldModule
+
 } from '@angular/material';
 
+import { MatTableModule } from '@angular/material/table';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -20,6 +24,9 @@ import {
         MatInputModule,
         MatMenuModule,
         MatListModule,
+        MatFormFieldModule,
+        MatTableModule,
+        FlexLayoutModule,
     CommonModule
   ],
   declarations: []

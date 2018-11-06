@@ -1,16 +1,23 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { Routes, RouterModule} from '@angular/router';
 
 const routes: Routes = [
   {
-    path:'employee',
-    loadChildren: './modules/employee/employee.module#EmployeeModule'
+    path:'employees',
+    loadChildren: './modules/employee-list/employee-list.module#EmployeeListModule'
   },
   {
     path:'projects',
     loadChildren: './modules/project-list/project-list.module#ProjectListModule'
+  },
+  {
+    path:'employee-add',
+    loadChildren: './modules/employee-update/employee-update.module#EmployeeUpdateModule'
+  },
+  {
+    path:'employee-edit',
+    loadChildren: './modules/employee-update/employee-update.module#EmployeeUpdateModule'
   }
-
 ];
 
 @NgModule({

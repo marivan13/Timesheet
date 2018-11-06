@@ -4,8 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import Employee from '@app/core/models/employee.model';
 import {environment} from '@env/environment';
 
-@Injectable(
-  {providedIn: 'root'
+@Injectable({
+  providedIn: 'root'
 })
 export default class EmployeeService {
 
@@ -17,5 +17,24 @@ export default class EmployeeService {
 
   getAllEmployees(): Observable<Array<Employee>>{
     return this.http.get<Array<Employee>>(this.EMPLOYEES_API, {headers: this.HEADER});
+  }
+
+  getEmployee(id:string){
+    return this.http.get(`${this.EMPLOYEES_API}/${id}`, {headers: this.HEADER});
+  }
+
+  saveEmployee(employee:Employee):Observable<Employee> {
+    let updatedEmployee: Observable<Employee>;
+    if (employee.Id) {
+      console.log(employee);
+      updatedEmployee = this.http.put<Employee>(`${this.EMPLOYEES_API}`, {employee: employee},
+      {headers: this.HEADER});
+      console.log(updatedEmployee);
+    }
+    else {
+      console.log(employee);
+      updatedEmployee = this.http.post<Employee>(this.EMPLOYEES_API, employee, {headers: this.HEADER});
+    }
+    return updatedEmployee;
   }
 }

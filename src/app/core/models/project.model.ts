@@ -7,4 +7,8 @@ export class Project {
     imageUrl:string;
     tickets: string;
     id:number;
+
+    constructor(){
+        this.id = 1;
+    }
 }

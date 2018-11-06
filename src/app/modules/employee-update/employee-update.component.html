@@ -1,0 +1,74 @@
+<p>
+  employee-update works!
+</p>
+<mat-card fxLayoutAlign="center">
+  <form #employeeForm="ngForm" (ngSubmit)="save(employeeForm)">
+	<mat-card-header>
+  	<mat-card-title>
+    <h2>{{employee.First ? 'Edit' : 'Add'}} Employee</h2> 
+  	</mat-card-title>
+	</mat-card-header >
+	  <mat-card-content fxLayout="column" fxLayoutAlign="center">
+  	<mat-form-field>
+    	<input matInput placeholder="First Name" [(ngModel)]="employee.First" required name="First">
+    </mat-form-field>
+    <mat-form-field >
+    	<input matInput placeholder="Last Name" [(ngModel)]="employee.Last"  name="Last">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker3" placeholder="Birthday Date" [value]="employee.Birthday" [(ngModel)]="employee.Birthday"  name="Birthday">
+      <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+      <mat-datepicker #picker3></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+    	<input matInput placeholder="Email" [(ngModel)]="employee.Email"  name="Email">
+    </mat-form-field>
+    <mat-form-field>
+    	<input matInput placeholder="Address" [(ngModel)]="employee.Address"  name="Address">
+    </mat-form-field>
+    <mat-form-field>
+    	<input matInput placeholder="Skype" [(ngModel)]="employee.Skype"  name="Skype">
+    </mat-form-field>
+    <mat-form-field>
+    	<input matInput placeholder="Phone" [(ngModel)]="employee.Phone"  name="Phone">
+    </mat-form-field>
+    <mat-form-field>
+    	<input matInput placeholder="ImageUrl" [(ngModel)]="employee.ImageUrl"  name="ImageUrl">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Location" [(value)]="employee.LocationId">
+        <mat-option *ngFor="let location of locations" [value]="location.Id" name="Location">
+          {{location.Name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Position" [(value)]="employee.PositionId">
+        <mat-option *ngFor="let position of positions" [value]="position.Id" name="Position">
+          {{position.Name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="Projects">
+        <mat-option *ngFor="let project of employee.Projects" [value]="project.Id" name="Projects">
+          {{project.Name}} {{project.Description}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <input type="hidden" name="LocationId" [(ngModel)]="employee.LocationId">
+    <input type="hidden" name="PositionId" [(ngModel)]="employee.PositionId">
+    <input type="hidden" name="Id" [(ngModel)]="employee.Id">
+	</mat-card-content>
+	<mat-card-actions>
+  	<button mat-raised-button color="primary" type="submit" [disabled]="!employeeForm.form.valid">Save
+  	</button>
+  	<button mat-raised-button color="secondary" *ngIf="employee.Id" type="button">Delete
+  	</button>
+  	<a mat-button routerLink="/employees">Cancel</a> 
+	</mat-card-actions>
+	<mat-card-footer>
+
+	</mat-card-footer>
+  </form>
+</mat-card>
