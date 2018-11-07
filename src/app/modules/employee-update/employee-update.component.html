@@ -2,10 +2,10 @@
   employee-update works!
 </p>
 <mat-card fxLayoutAlign="center">
-  <form #employeeForm="ngForm" (ngSubmit)="save(employeeForm)">
+  <form #employeeForm="ngForm" (ngSubmit)="saveEmployee(employeeForm)">
 	<mat-card-header>
   	<mat-card-title>
-    <h2>{{employee.First ? 'Edit' : 'Add'}} Employee</h2> 
+    <h2>{{employee.Id ? 'Edit' : 'Add'}} Employee</h2> 
   	</mat-card-title>
 	</mat-card-header >
 	  <mat-card-content fxLayout="column" fxLayoutAlign="center">

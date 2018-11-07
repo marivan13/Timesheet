@@ -1,7 +1,7 @@
 import {Project} from './project.model';
 export default class Employee{
 
-  First: string;
+  First?: string;
   Last?: string;
   Email?: string;
   LocationId?: number;
