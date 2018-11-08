@@ -44,7 +44,7 @@
       <ng-container matColumnDef="delete">
           <th mat-header-cell *matHeaderCellDef></th>
           <td mat-cell *matCellDef="let employee">
-            <a mat-button routerLink= '/'>delete</a>
+            <button mat-button (click)="deleteEmployee(employee.Id)">delete</button >
           </td>
       </ng-container>
   

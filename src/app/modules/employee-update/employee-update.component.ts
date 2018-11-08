@@ -66,10 +66,10 @@ export class EmployeeUpdateComponent implements OnInit, OnDestroy {
     console.log (this.employee);
 
     this.employeeService.saveEmployee(this.employee).subscribe(
-      result => {
-        this.gotoEmployeeList();
-      },
-      error => console.log(error)
+     result => {
+       this.gotoEmployeeList();
+     },
+     error => console.log(error)
     )
   }
 
@@ -80,5 +80,19 @@ export class EmployeeUpdateComponent implements OnInit, OnDestroy {
   gotoEmployeeList(){
     this.router.navigate(['/employees']);
   }
+
+  deleteEmployee(id: string){
+    console.log("employee delete component");
+    console.log(id);
+    this.employeeService.deleteEmployee(id).subscribe(
+      result => {
+        this.gotoEmployeeList();
+      },
+      error => console.log(error)
+     )
+  }
+
+
+
 
 }

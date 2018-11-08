@@ -1,26 +1,20 @@
 import {Project} from './project.model';
 export default class Employee{
 
-  First?: string;
-  Last?: string;
-  Email?: string;
-  LocationId?: number;
-  Birthday?: string;
-  Address?: string;
-  Skype?: string;
-  Projects?: Array<Project>;
-  Phone?: string;
-  ImageUrl?: string
-  PositionId?: number;
-  Password?: string;
-  Roles?: number[];
-  Id: number;
-
-  constructor(){
-      this.Birthday = "2017-10-26T13:44:28.623";
-      this.LocationId = 1;
-    //  this.Projects.push(new Project);
-      this.PositionId = 1;
-      this.Roles = [1];
-  }
+  constructor(
+    public Id: number = 0,
+    public First: string = '',
+    public Last: string = '',
+    public Email: string = '',
+    public LocationId: number = 0,
+    public Birthday: string = new Date().toISOString(),
+    public Address: string = '',
+    public Skype: string = '',
+    public Projects: Project[] = [],
+    public Phone: string = '',
+    public ImageUrl: string = '',
+    public PositionId: number = 0,
+    public Password: string = '',
+    public Roles: number[] = []
+    ){}
 }

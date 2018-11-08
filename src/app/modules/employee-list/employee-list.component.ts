@@ -28,4 +28,13 @@ export class EmployeeListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  deleteEmployee(id: string){
+    this.employeeService.deleteEmployee(id).subscribe(
+      result => {
+     //   this.gotoEmployeeList();
+      },
+      error => console.log(error)
+     )
+  }
+
 }

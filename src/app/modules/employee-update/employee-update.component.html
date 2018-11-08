@@ -10,7 +10,7 @@
 	</mat-card-header >
 	  <mat-card-content fxLayout="column" fxLayoutAlign="center">
   	<mat-form-field>
-    	<input matInput placeholder="First Name" [(ngModel)]="employee.First" required name="First">
+    	<input matInput placeholder="First Name" [(ngModel)]="employee.First" required name="First" #First = "ngModel">
     </mat-form-field>
     <mat-form-field >
     	<input matInput placeholder="Last Name" [(ngModel)]="employee.Last"  name="Last">
@@ -37,27 +37,27 @@
     </mat-form-field>
     <mat-form-field>
       <mat-select placeholder="Location" [(value)]="employee.LocationId">
-        <mat-option *ngFor="let location of locations" [value]="location.Id" name="Location">
+        <mat-option *ngFor="let location of locations" [value]="location.Id" name="LocationId">
           {{location.Name}}
         </mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field>
       <mat-select placeholder="Position" [(value)]="employee.PositionId">
-        <mat-option *ngFor="let position of positions" [value]="position.Id" name="Position">
+        <mat-option *ngFor="let position of positions" [value]="position.Id" name="PositionId">
           {{position.Name}}
         </mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-form-field>
+    <!--<mat-form-field>
       <mat-select placeholder="Projects">
         <mat-option *ngFor="let project of employee.Projects" [value]="project.Id" name="Projects">
           {{project.Name}} {{project.Description}}
         </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <input type="hidden" name="LocationId" [(ngModel)]="employee.LocationId">
-    <input type="hidden" name="PositionId" [(ngModel)]="employee.PositionId">
+      </mat-select> 
+    </mat-form-field> -->
+  <!--  <input type="hidden" name="LocationId" [(ngModel)]="employee.LocationId">
+    <input type="hidden" name="PositionId" [(ngModel)]="employee.PositionId"> -->
     <input type="hidden" name="Id" [(ngModel)]="employee.Id">
 	</mat-card-content>
 	<mat-card-actions>

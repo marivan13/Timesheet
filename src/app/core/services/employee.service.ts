@@ -31,16 +31,24 @@ export default class EmployeeService {
   saveEmployee(employee):Observable<Employee> {
     //update existing employee
     if (employee.Id) {
-
-        return this.apiService.put("/employees/",{employee:employee})
-        .pipe(map(data => data.employee));
+       console.log("Employee service");
+       console.log(employee);
+        return this.apiService.put("/employees/", employee)
+       .pipe(map(data => data.employee));
     }
     //add new employee
     else{
-        return this.apiService.post("/employees/",{employee:employee})
-        .pipe(map(data => data.employee));;
+        return this.apiService.post("/employees/", employee)
+        .pipe(map(data => data.employee));
     }
   }
+
+  deleteEmployee(id:string){
+    console.log("delete");
+    console.log(id);
+    return this.apiService.delete('/employees/'+id);
+  }
+
 
   // getEmployee(id:string){
   //   return this.http.get(`${this.EMPLOYEES_API}/${id}`, {headers: this.HEADER});

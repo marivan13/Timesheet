@@ -40,7 +40,7 @@ export class ApiService {
 
   
   post(path:string, body:Object = {} ):Observable<any>{
-    return this.http.post(`${environment.api}${path}`, JSON.stringify(body), 
+    return this.http.post(`${environment.api}${path}`,body, 
     {headers: this.headers}).pipe(catchError(this.formatErrors));
   }
 
