@@ -7,6 +7,19 @@
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
       </mat-form-field> 
     </div>
+    <div>
+        <mat-form-field>
+          <input matInput placeholder="ProjectId">
+        </mat-form-field> 
+    </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="Key">
+        </mat-form-field> 
+      </div>
+      <div>
+          <button mat-button (click)="employeeSearch()"> Search </button>
+      </div>
     <div [fxFlex]="30">
         <a mat-raised-button [routerLink]= "['/employee-add']"> Add employee </a>
     </div>
