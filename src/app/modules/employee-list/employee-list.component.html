@@ -1,15 +1,15 @@
 <p>
   employee-list works!
 </p>
-<div fxLayout="row" fxLayoutAlign="">
-    <div [fxFlex]="70">
+<div fxLayout="row" fxLayoutAlign="center center">
+    <div>
       <mat-form-field>
         <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
       </mat-form-field> 
     </div>
-    <div>
+    <!--<div>
         <mat-form-field>
-          <input matInput placeholder="ProjectId">
+          <input matInput class="form-control" name="projectId" formControlName= "projectId" placeholder="ProjectId" >
         </mat-form-field> 
     </div>
       <div>
@@ -19,8 +19,8 @@
       </div>
       <div>
           <button mat-button (click)="employeeSearch()"> Search </button>
-      </div>
-    <div [fxFlex]="30">
+      </div> -->
+    <div>
         <a mat-raised-button [routerLink]= "['/employee-add']"> Add employee </a>
     </div>
   </div>

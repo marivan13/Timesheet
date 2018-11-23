@@ -7,10 +7,12 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { EmployeeRoutingModule } from './employee-routing.module';
 import { EmployeeComponent } from '@app/modules/employee/employee.component';
 import EmployeeService from '@app/core/services/employee.service';
+import { SkillComponent } from './skill/skill.component';
 
 @NgModule({
   declarations: [
-    EmployeeComponent
+    EmployeeComponent,
+    SkillComponent
   ],
   imports: [
     CommonModule,

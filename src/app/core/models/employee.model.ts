@@ -1,4 +1,6 @@
 import {Project} from './project.model';
+import {Role} from './role.model';
+
 export default class Employee{
 
   constructor(
@@ -15,6 +17,6 @@ export default class Employee{
     public ImageUrl: string = '',
     public PositionId: number = 0,
     public Password: string = '',
-    public Roles: number[] = []
+    public Roles: Role[] = []
     ){}
 }

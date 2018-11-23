@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource} from '@angular/material';
 import  EmployeeService  from '@app/core/services/employee.service';
 import  Employee  from '@app/core/models/employee.model';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-employee-list',
@@ -12,8 +13,8 @@ export class EmployeeListComponent implements OnInit {
   employees: Array<Employee>;
   displayedColumns = ['name', 'email', 'phone', 'skype', 'edit', 'delete'];
   dataSource:MatTableDataSource<Employee>;
-  projectId: string;
-  key:string;
+  projectId = new FormControl();
+  key = new FormControl()
 
   constructor(private employeeService:EmployeeService) { }
 
@@ -40,16 +41,16 @@ export class EmployeeListComponent implements OnInit {
      )
   }
 
-  employeeSearch(key:string, projectId:string)
-  {
-    console.log("employee search");
-    console.log(key);
-    console.log(projectId);
-    this.employeeService.searchEmployee().subscribe(data => {
-      console.log(data);
-      this.employees = data;
-      this.dataSource = new MatTableDataSource(this.employees);
-    });
-  }
+  // employeeSearch(projectId:string)
+  // {
+  //   console.log("employee search");
+  //   console.log(this.key);
+  //   console.log(projectId);
+  //   this.employeeService.searchEmployee().subscribe(data => {
+  //     console.log(data);
+  //     this.employees = data;
+  //     this.dataSource = new MatTableDataSource(this.employees);
+  //   });
+  // }
 
 }

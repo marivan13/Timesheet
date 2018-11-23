@@ -11,17 +11,24 @@ const routes: Routes = [
     loadChildren: './modules/project-list/project-list.module#ProjectListModule'
   },
   {
-    path:'employee-add',
-    loadChildren: './modules/employee-update/employee-update.module#EmployeeUpdateModule'
+    path:'employee',
+    loadChildren: './modules/employee/employee.module#EmployeeModule'
   },
   {
-    path:'employee-edit',
-    loadChildren: './modules/employee-update/employee-update.module#EmployeeUpdateModule'
-  }
+    path:'project',
+    loadChildren: './modules/project/project.module#ProjectModule'
+  },
+  {
+    path:'dashboard',
+    loadChildren: './modules/dashboard/dashboard.module#DashboardModule'
+  },
+  {
+    path:'ticket',
+    loadChildren: './modules/ticket/ticket.module#TicketModule'
+  },
 ];
 
 @NgModule({
- // imports: [RouterModule.forRoot(routes, {preloadingStrategy:PreloadAllModules})],
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

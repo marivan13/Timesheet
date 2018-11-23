@@ -26,10 +26,10 @@ export class ApiService {
   public skill_path = '/skills';
   public team_path = '/team';
 
-  public queryParams: {
-    projectId?:number,
-    key?:string
-  }
+  // public queryParams: {
+  //   projectId?:number,
+  //   key?:string
+  // }
 
   public header_key = new HttpHeaders().append('API_KEY', environment.api_key);
 
@@ -52,7 +52,6 @@ export class ApiService {
     return this.http.get<Array<any>>(`${environment.api}${path}/search`, {headers: this.headers, params: new HttpParams({fromObject:params})});
   } 
 
-  
   put(path:string, body:Object = {} ):Observable<any>{
       return this.http.put(`${environment.api}${path}`, body, 
       {headers: this.headers}).pipe(catchError(this.formatErrors));
@@ -64,17 +63,17 @@ export class ApiService {
     {headers: this.headers}).pipe(catchError(this.formatErrors));
   }
 
-  delete(path: string): Observable<any> {
-    return this.http.delete(`${environment.api}${path}`, {headers: this.headers})
+  delete(path: string, params: HttpParams = new HttpParams()): Observable<any> {
+    return this.http.delete(`${environment.api}${path}`, {headers: this.headers, params})
       .pipe(catchError(this.formatErrors));
   }
 
-  getParamsFromQuery(queryParams):HttpParams{
-    let params = {};
-    Object.keys(queryParams)
-    .forEach((key)=>{ params[key] = queryParams[key]});
-    return new HttpParams({fromObject:params});
-  }
+  // getParamsFromQuery(queryParams):HttpParams{
+  //   let params = {};
+  //   Object.keys(queryParams)
+  //   .forEach((key)=>{ params[key] = queryParams[key]});
+  //   return new HttpParams({fromObject:params});
+  // }
 
   private formatErrors(error: any) {
     return  throwError(error.error);

@@ -4,10 +4,6 @@ import  EmployeeService  from '@app/core/services/employee.service';
 import  Employee  from '@app/core/models/employee.model';
 import {Project} from '@app/core/models/project.model';
 
-// export interface Transaction {
-//   item: string;
-//   cost: number;
-// }
 @Component({
   selector: 'app-timesheet',
   templateUrl: './timesheet.component.html',
@@ -18,16 +14,6 @@ export class TimesheetComponent implements OnInit {
   projects:Array<Project>;
   displayedColumns: string[] = ['projectName', 'taskName'];
   dataSource:MatTableDataSource<Project>;
-
-  // transactions: Transaction[] = [
-  //   {item: 'Beach ball', cost: 4},
-  //   {item: 'Towel', cost: 5},
-  //   {item: 'Frisbee', cost: 2},
-  //   {item: 'Sunscreen', cost: 4},
-  //   {item: 'Cooler', cost: 25},
-  //   {item: 'Swim suit', cost: 15},
-  // ];
-
   constructor(private employeeService:EmployeeService) { }
 
   ngOnInit() {
@@ -36,9 +22,7 @@ export class TimesheetComponent implements OnInit {
       this.projects = data;
       this.dataSource = new MatTableDataSource(this.projects);
       console.log(this.dataSource);
-
     })
-    
   }
 
   // getTotalCost() {

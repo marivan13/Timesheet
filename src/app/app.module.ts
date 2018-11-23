@@ -24,7 +24,7 @@ import { SharedModule } from '@app/shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

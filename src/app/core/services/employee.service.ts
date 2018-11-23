@@ -32,7 +32,7 @@ export default class EmployeeService {
   }
 
   getEmployee(id:string){
-   // return this.apiService.get('/employees/'+id).pipe(map((data: {employee:Employee}) => data.employee));
+
     return this.apiService.get(`${this.apiService.employee_path}/${id}`);
   }
 

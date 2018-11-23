@@ -1,0 +1,242 @@
+{
+    "employee": {
+        "First": "Daviddddddd",
+        "Last": "Beckham",
+        "Birthday": "1986-10-26T13:44:28.623",
+        "Email": "david.beckham@dataart.com",
+        "Password": "111111",
+        "Address": "Los Angeles, CA, USA",
+        "Skype": "david_beckham",
+        "Phone": "380667895577",
+        "ImageUrl": "employee.png",
+        "PositionId": 2,
+        "Position": {
+            "Name": "Developer",
+            "Id": 2
+        },
+        "LocationId": 1,
+        "Location": {
+            "Name": "New York",
+            "Id": 1
+        },
+        "Projects": [
+            {
+                "Name": "OpenQ",
+                "Description": "The complete solution for Medical Affairs organizations.",
+                "CustomerName": "OpenQ",
+                "StartDate": "2017-10-26T13:44:28.623",
+                "EndDate": "2019-10-26T13:44:28.623",
+                "ImageUrl": "project.png",
+                "Tickets": [
+                    {
+                        "Name": "AP-0001",
+                        "Description": "Fix bug on front end",
+                        "Estimate": 3,
+                        "StartDate": "2018-10-26T13:44:28.623",
+                        "EndDate": null,
+                        "StatusId": 1,
+                        "Status": null,
+                        "ResponsibleId": 3691,
+                        "TypeId": 1,
+                        "TicketType": null,
+                        "ProjectId": 3903,
+                        "Project": null,
+                        "ReporterId": 3691,
+                        "TimeSheets": [
+                            {
+                                "LoggedTime": 4,
+                                "Date": "2018-10-24T13:44:28.64",
+                                "TicketId": 13504,
+                                "Comment": "Comment to the ticket",
+                                "Id": 32178
+                            },
+                            {
+                                "LoggedTime": 6,
+                                "Date": "2018-10-23T13:44:28.64",
+                                "TicketId": 13504,
+                                "Comment": "Comment to the ticket",
+                                "Id": 32179
+                            }
+                        ],
+                        "Id": 13504
+                    },
+                    {
+                        "Name": "AP-0002",
+                        "Description": "Fix bug on back end",
+                        "Estimate": 4,
+                        "StartDate": "2018-10-26T13:44:28.623",
+                        "EndDate": null,
+                        "StatusId": 1,
+                        "Status": null,
+                        "ResponsibleId": 3691,
+                        "TypeId": 1,
+                        "TicketType": null,
+                        "ProjectId": 3903,
+                        "Project": null,
+                        "ReporterId": 3691,
+                        "TimeSheets": [
+                            {
+                                "LoggedTime": 4,
+                                "Date": "2018-10-24T13:44:28.64",
+                                "TicketId": 13505,
+                                "Comment": "Comment to the ticket",
+                                "Id": 32180
+                            },
+                            {
+                                "LoggedTime": 6,
+                                "Date": "2018-10-23T13:44:28.64",
+                                "TicketId": 13505,
+                                "Comment": "Comment to the ticket",
+                                "Id": 32181
+                            }
+                        ],
+                        "Id": 13505
+                    },
+                    {
+                        "Name": "AP-0003",
+                        "Description": "Fix css styling",
+                        "Estimate": 4,
+                        "StartDate": "2018-10-26T13:44:28.623",
+                        "EndDate": null,
+                        "StatusId": 1,
+                        "Status": null,
+                        "ResponsibleId": 3691,
+                        "TypeId": 1,
+                        "TicketType": null,
+                        "ProjectId": 3903,
+                        "Project": null,
+                        "ReporterId": 3691,
+                        "TimeSheets": [
+                            {
+                                "LoggedTime": 4,
+                                "Date": "2018-10-24T13:44:28.64",
+                                "TicketId": 13512,
+                                "Comment": "Comment to the ticket",
+                                "Id": 32194
+                            },
+                            {
+                                "LoggedTime": 6,
+                                "Date": "2018-10-23T13:44:28.64",
+                                "TicketId": 13512,
+                                "Comment": "Comment to the ticket",
+                                "Id": 32195
+                            }
+                        ],
+                        "Id": 13512
+                    }
+                ],
+                "Id": 3903
+            },
+            {
+                "Name": "Artnet",
+                "Description": "Artnet is the leading resource for the international art market.",
+                "CustomerName": "Artnet",
+                "StartDate": "2015-10-26T13:44:28.623",
+                "EndDate": "2020-10-26T13:44:28.623",
+                "ImageUrl": "project.png",
+                "Tickets": [
+                    {
+                        "Name": "AP-0003",
+                        "Description": "Fix css styling",
+                        "Estimate": 4,
+                        "StartDate": "2018-10-26T13:44:28.623",
+                        "EndDate": null,
+                        "StatusId": 1,
+                        "Status": null,
+                        "ResponsibleId": 3691,
+                        "TypeId": 1,
+                        "TicketType": null,
+                        "ProjectId": 3904,
+                        "Project": null,
+                        "ReporterId": 3691,
+                        "TimeSheets": [
+                            {
+                                "LoggedTime": 4,
+                                "Date": "2018-10-24T13:44:28.64",
+                                "TicketId": 13506,
+                                "Comment": "Comment to the ticket",
+                                "Id": 32182
+                            },
+                            {
+                                "LoggedTime": 6,
+                                "Date": "2018-10-23T13:44:28.64",
+                                "TicketId": 13506,
+                                "Comment": "Comment to the ticket",
+                                "Id": 32183
+                            }
+                        ],
+                        "Id": 13506
+                    },
+                    {
+                        "Name": "AP-0001",
+                        "Description": "Fix bug on front end",
+                        "Estimate": 3,
+                        "StartDate": "2018-10-26T13:44:28.623",
+                        "EndDate": null,
+                        "StatusId": 1,
+                        "Status": null,
+                        "ResponsibleId": 3691,
+                        "TypeId": 1,
+                        "TicketType": null,
+                        "ProjectId": 3904,
+                        "Project": null,
+                        "ReporterId": 3691,
+                        "TimeSheets": [
+                            {
+                                "LoggedTime": 4,
+                                "Date": "2018-10-24T13:44:28.64",
+                                "TicketId": 13510,
+                                "Comment": "Comment to the ticket",
+                                "Id": 32190
+                            },
+                            {
+                                "LoggedTime": 6,
+                                "Date": "2018-10-23T13:44:28.64",
+                                "TicketId": 13510,
+                                "Comment": "Comment to the ticket",
+                                "Id": 32191
+                            }
+                        ],
+                        "Id": 13510
+                    },
+                    {
+                        "Name": "AP-0002",
+                        "Description": "Fix bug on back end",
+                        "Estimate": 4,
+                        "StartDate": "2018-10-26T13:44:28.623",
+                        "EndDate": null,
+                        "StatusId": 1,
+                        "Status": null,
+                        "ResponsibleId": 3691,
+                        "TypeId": 1,
+                        "TicketType": null,
+                        "ProjectId": 3904,
+                        "Project": null,
+                        "ReporterId": 3691,
+                        "TimeSheets": [
+                            {
+                                "LoggedTime": 4,
+                                "Date": "2018-10-24T13:44:28.64",
+                                "TicketId": 13511,
+                                "Comment": "Comment to the ticket",
+                                "Id": 32192
+                            },
+                            {
+                                "LoggedTime": 6,
+                                "Date": "2018-10-23T13:44:28.64",
+                                "TicketId": 13511,
+                                "Comment": "Comment to the ticket",
+                                "Id": 32193
+                            }
+                        ],
+                        "Id": 13511
+                    }
+                ],
+                "Id": 3904
+            }
+        ],
+        "Roles": [],
+        "FullName": "David Beckham",
+        "Id": 3691
+    }
+}

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import {Project} from '@app/core/models/project.model';
-import {environment} from '@env/environment';
+import { map } from 'rxjs/operators';
+import { ApiService } from '@app/core/services/api.service';
 
 
 @Injectable({
@@ -10,12 +10,38 @@ import {environment} from '@env/environment';
 })
 export class ProjectService {
 
-  public PROJECTS_API = `${environment.api}/projects`;
-  public HEADER = new HttpHeaders().append('API_KEY', environment.api_key);
 
-  constructor(private http:HttpClient) { }
+  constructor(private apiService:ApiService) { }
 
   getAllProjects(): Observable<Array<Project>>{
-    return this.http.get<Array<Project>>(this.PROJECTS_API, {headers: this.HEADER});
+    return this.apiService.getAll(this.apiService.project_path);
   }
+
+  getProject(id:string){
+    return this.apiService.get(`${this.apiService.project_path}/${id}`);
+  }
+
+  saveProject(project):Observable<Project>
+  {
+    if (project.Id){
+      return this.apiService.put(`${this.apiService.project_path}/`, project)
+      .pipe(map(data => data.project));
+    }
+    else{
+      return this.apiService.post(`${this.apiService.project_path}/`, project)
+        .pipe(map(data => data.project));
+    }
+  }
+
+  deleteProject(id:string){
+    return this.apiService.delete(`${this.apiService.project_path}/${id}`); 
+  }
+
+  getTicketsByProjectId(id:string){
+    return this.apiService.getAll(`${this.apiService.project_path}/${id}/${this.apiService.ticket_path}`);
+  }
+
+  searchProject(){}
+
+
 }
